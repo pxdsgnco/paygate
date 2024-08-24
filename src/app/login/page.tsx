@@ -133,8 +133,9 @@ export default function Login() {
         <p>
           <Link href="/forgot-password" className="text-blue-500 hover:underline">Forgot Password?</Link>
         </p>
+        {/* eslint-disable-next-line react/no-unescaped-entities */}
         <p>
-          Don&apos;t have an account? <Link href="/signup" className="text-blue-500 hover:underline">Sign Up</Link>
+          Don't have an account? <Link href="/signup" className="text-blue-500 hover:underline">Sign Up</Link>
         </p>
       </div>
     </main>

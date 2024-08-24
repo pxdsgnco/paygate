@@ -75,7 +75,8 @@ export default function Dashboard() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-center p-24">
       <h1 className="text-3xl font-bold mb-8">Welcome, {user.fullName}!</h1>
-      <p className="mb-8">You&apos;re logged in as {user.email}</p>
+      {/* eslint-disable-next-line react/no-unescaped-entities */}
+      <p className="mb-8">You're logged in as {user.email}</p>
       <Button onClick={handleLogout}>Logout</Button>
     </main>
   )
