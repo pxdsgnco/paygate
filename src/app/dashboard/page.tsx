@@ -67,14 +67,15 @@ export default function Dashboard() {
 
   if (!user) {
     return <main className="flex min-h-screen flex-col items-center justify-center p-24">
-      <h1 className="text-3xl font-bold mb-8">Loading...</h1>
+      <h1 className="text-3xl font-bold mb-8">No user data found</h1>
+      <Button onClick={() => router.push('/login')}>Back to Login</Button>
     </main>
   }
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-center p-24">
       <h1 className="text-3xl font-bold mb-8">Welcome, {user.fullName}!</h1>
-      <p className="mb-8">You're logged in as {user.email}</p>
+      <p className="mb-8">You&apos;re logged in as {user.email}</p>
       <Button onClick={handleLogout}>Logout</Button>
     </main>
   )
