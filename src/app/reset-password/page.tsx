@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useRouter, useSearchParams } from 'next/navigation'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
@@ -34,8 +34,13 @@ export default function ResetPassword() {
   const [message, setMessage] = useState('')
   const router = useRouter()
   const searchParams = useSearchParams()
-  const email = searchParams.get('email')
-  const token = searchParams.get('token')
+  const [email, setEmail] = useState('')
+  const [token, setToken] = useState('')
+
+  useEffect(() => {
+    setEmail(searchParams.get('email') || '')
+    setToken(searchParams.get('token') || '')
+  }, [searchParams])
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
